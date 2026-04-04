@@ -1,4 +1,4 @@
-package guia_ejercicios;
+package ejercicios;
 
 public class App
 {
@@ -22,5 +22,9 @@ public class App
         System.out.println();
         System.out.println("Taréa número 5:");
         EjercicioCinco.main(new String[]{});
+
+        System.out.println();
+        System.out.println("Taréa número 6:");
+        EjercicioSeis.main(new String[]{});
     }
 }

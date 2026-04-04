@@ -1,7 +1,6 @@
-package guia_ejercicios;
+package ejercicios;
 
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class EjercicioDos {
     public static void main ( String[] args ) {

@@ -1,4 +1,4 @@
-package guia_ejercicios;
+package ejercicios;
 
 public class EjercicioUno {
     public static void main ( String[] args ) {
