@@ -16,4 +16,12 @@ public class Capitan {
     public int getAntig() {
         return antig;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
 }

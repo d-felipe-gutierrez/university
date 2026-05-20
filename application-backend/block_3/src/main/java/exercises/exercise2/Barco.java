@@ -31,7 +31,7 @@ public class Barco {
         return costoAlq;
     }
 
-    public int getCapitanAntig() {
-        return capitan.getAntig();
+    public Capitan getCapitan() {
+        return capitan;
     }
 }
