@@ -13,8 +13,8 @@ public class Cotizacion {
 
     @Id
     @Column(name = "MONEDA", length = 3)
-    private String moneda;          // "ARS", "USD", "EUR", etc.
+    private String moneda;
 
     @Column(name = "TASA_CAMBIO", nullable = false)
-    private Double tasaCambio;      // cuántos ARS vale 1 unidad de esa moneda
+    private Double tasaCambio;
 }

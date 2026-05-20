@@ -28,7 +28,6 @@ public class Tarjeta {
     @Column(name = "LIMITE_CREDITO", nullable = false)
     private Double limiteCredito;
 
-    // ── Relaciones ──────────────────────────────────────────────────────────
     @OneToMany(mappedBy = "tarjeta", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Consumo> consumos = new ArrayList<>();
 
