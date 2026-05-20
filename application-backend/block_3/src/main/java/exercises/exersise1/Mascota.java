@@ -1,4 +1,4 @@
-package guia_ejercicios;
+package exercises.exersise1;
 
 public class Mascota {
     short energia;
