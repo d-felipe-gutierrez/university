@@ -1,4 +1,4 @@
-package exercises.exersise1;
+package exercises.exercise1;
 
 public class Mascota {
     short energia;

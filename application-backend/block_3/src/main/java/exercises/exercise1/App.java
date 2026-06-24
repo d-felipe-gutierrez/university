@@ -1,4 +1,4 @@
-package exercises.exersise1;
+package exercises.exercise1;
 
 /**
  * Hello world!
