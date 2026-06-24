@@ -9,23 +9,12 @@ public class CafeteraInteligente {
     private Integer cafesServidos;
     private Integer temperatura;
 
-    public CafeteraInteligente(String marca, String modelo, Integer capacidadMaxima, Integer contenidoActual, Boolean encendida, Integer cafesServidos, Integer temperatura) {
+    public CafeteraInteligente(String marca, String modelo, Integer capacidadMaxima) {
         this.marca = marca;
         this.modelo = modelo;
         this.setCapacidadMaxima(capacidadMaxima);
-        this.setContenidoActual(contenidoActual);
-        this.setEncendida(encendida);
-        this.setCafesServidos(cafesServidos);
-        this.setTemperatura(temperatura);
-    }
-
-    public CafeteraInteligente(String marca, String modelo, Integer capacidadMaxima, Integer contenidoActual, Boolean encendida, Integer temperatura) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.setCapacidadMaxima(capacidadMaxima);
-        this.setContenidoActual(contenidoActual);
-        this.setEncendida(encendida);
-        this.setTemperatura(temperatura);
+        setEncendida(false);
+        setCafesServidos(0);
     }
 
     public void setCapacidadMaxima(Integer capacidadMaxima) {
@@ -61,32 +50,70 @@ public class CafeteraInteligente {
     }
 
     public void encender() {
-        setEncendida(true);
-        setTemperatura(20);
-        setContenidoActual(0);
+        if (encendida) {
+            System.out.println("La cafetera ya esta encendida...");
+        } else {
+            setEncendida(true);
+            setTemperatura(20);
+            setContenidoActual(0);
+
+            System.out.println("La cafetera se encendio...\n" +
+                    "Se establecio la temperatura en " + temperatura + "°C.\n" +
+                    "Se establecio el contenido actual en " + contenidoActual + "ml.");
+        }
     }
 
     public void apagar() {
-        setEncendida(false);
-        setCafesServidos(0);
+        if (encendida) {
+            setEncendida(false);
+            setCafesServidos(0);
+
+            System.out.println("La cafetera se apago...\n" +
+                    "Se establecio la cantidad de cafe servido en " + cafesServidos);
+        } else {
+            System.out.println("La cafetera ya esta apagada...");
+        }
     }
 
     public void cargarAgua(Integer cantidad) {
-        if (!encendida) return;
+        if (encendida) {
+            setContenidoActual(contenidoActual + cantidad);
 
-        setContenidoActual(cantidad);
+            System.out.println("La cafetera fue cargada con agua...\n" +
+                    "Se establecio la cantidad de agua en la cafetera en " + contenidoActual);
+        } else {
+            System.out.println("No se puede cargar agua debido a que la cafetera no esta prendida...");
+        }
     }
 
     public void calentar() {
-        if (encendida) setTemperatura(temperatura + 40);
+        if (encendida) {
+            setTemperatura(temperatura + 40);
+
+            System.out.println("La cafetera se calento...\n" +
+                    "Se establecio la cantidad de temperatura en " + temperatura);
+        } else {
+            System.out.println("No se puede cargar agua debido a que la cafetera no esta prendida...");
+        }
     }
 
     public boolean servirCafe() {
-        if (encendida && (contenidoActual >= 100) && (temperatura >= 90)) {
+        if (!encendida) {
+            System.out.println("No se puede cargar agua debido a que la cafetera no esta prendida...");
+        } else if (contenidoActual < 100) {
+            System.out.println("No se puede cargar agua debido a que la cafetera no alcanza los 100ml...");
+        } else if (temperatura < 90) {
+            System.out.println("No se puede cargar agua debido a que la temperatura no alcanza los 90°C...");
+        } else {
             setContenidoActual(contenidoActual - 100);
             setCafesServidos(++cafesServidos);
+
+            System.out.println("Se sirvio cafe a un cliente\n" +
+                    "Se establecio la cantidad de cafe servido en " + cafesServidos + " unidades\n" +
+                    "Se establecio el contenido actual en " + contenidoActual + "ml.");
             return true;
-        } else return false;
+        }
+        return false;
     }
 
     @Override
