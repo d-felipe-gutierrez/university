@@ -26,13 +26,13 @@ public class App {
                 new MenuItem("1", "Encender") {
                     @Override
                     public void execute() {
-                        cafetera.encender();
+                        System.out.println(cafetera.encender());
                     }
                 },
                 new MenuItem("2", "Apagar") {
                     @Override
                     public void execute() {
-                        cafetera.apagar();
+                        System.out.println(cafetera.apagar());
                     }
                 },
                 new MenuItem("3", "Cargar agua") {
@@ -41,19 +41,19 @@ public class App {
                         System.out.println("Cuanta agua desea cargar?");
 
                         Integer cantidad = sc.nextInt();
-                        cafetera.cargarAgua(cantidad);
+                        System.out.println(cafetera.cargarAgua(cantidad));
                     }
                 },
                 new MenuItem("4", "Calentar") {
                     @Override
                     public void execute() {
-                        cafetera.calentar();
+                        System.out.println(cafetera.calentar());
                     }
                 },
                 new MenuItem("5", "Servir cafe") {
                     @Override
                     public void execute() {
-                        cafetera.servirCafe();
+                        System.out.println(cafetera.servirCafe());
                     }
                 },
                 new MenuItem("6", "Mostrar info. cafetera") {
