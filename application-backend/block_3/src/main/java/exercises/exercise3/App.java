@@ -1,7 +1,7 @@
 package exercises.exercise3;
 
-import exercises.util.Menu;
-import exercises.util.MenuItem;
+import util.Menu;
+import util.MenuItem;
 
 import java.util.Scanner;
 

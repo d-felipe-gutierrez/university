@@ -1,4 +1,4 @@
-package exercises.util;
+package util;
 
 public interface MenuCall {
     public void execute();

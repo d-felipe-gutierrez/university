@@ -1,4 +1,4 @@
-package exercises.util;
+package util;
 
 public abstract class MenuItem implements MenuCall {
     private String key, text;
