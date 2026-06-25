@@ -54,6 +54,7 @@ public class Menu {
 
     public void run() {
         while (true) {
+            System.out.println();
             printQuestion();
             printOptions();
             String op = getSelection();
