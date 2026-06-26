@@ -13,6 +13,14 @@ public class Autor {
         this.aniosCarrera = aniosCarrera;
     }
 
+    public boolean conTrayectoria() {
+        if (aniosCarrera > 18) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         return String.format("[Id: %s; Nombre: %s; Apellido: %s; Años carrera: %d]",

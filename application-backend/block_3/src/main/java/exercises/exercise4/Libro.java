@@ -17,6 +17,22 @@ public class Libro {
         this.autor = autor;
     }
 
+    public Double getPrecioPorDia() {
+        return precioPorDia;
+    }
+
+    public Integer getPaginas() {
+        return paginas;
+    }
+
+    public boolean autorConTrayectoria() {
+        return autor.conTrayectoria();
+    }
+
+    public boolean esEstantePar() {
+        return (nroEstante % 2 == 0);
+    }
+
     @Override
     public String toString() {
         return String.format("     - ISBN: %s\n" +

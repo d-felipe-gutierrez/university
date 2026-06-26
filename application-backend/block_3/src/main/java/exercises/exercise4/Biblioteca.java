@@ -71,6 +71,58 @@ public class Biblioteca {
         return sb.toString();
     }
 
+    public Double estimarRecaudacion() {
+        Double total = 0.0;
+
+        try {
+            for (int i = 0; i < cantidadLibros; i++) {
+                total += libros[i].getPrecioPorDia();
+            }
+            total *= 15;
+
+            return total;
+        } catch(NullPointerException e) {
+            System.out.println("No existen libros para hacer el calculo: " + e);
+            return null;
+        }
+    }
+
+    public Integer autoresConTrayectoria() {
+        Integer cantidadAutores = 0;
+
+        try {
+            for (int i = 0; i < cantidadLibros; i++) {
+                if (libros[i].autorConTrayectoria()) {
+                    cantidadAutores++;
+                }
+            }
+
+            return cantidadAutores;
+        } catch(NullPointerException e) {
+            System.out.println("No existen libros para hacer el calculo: " + e);
+            return null;
+        }
+    }
+
+    public Double promedioPaginas() {
+        try {
+            double paginas = 0;
+            double cantLibrosPares = 0;
+
+            for (int i = 0; i < cantidadLibros; i++) {
+                if (libros[i].esEstantePar()) {
+                    paginas += libros[i].getPaginas();
+                    cantLibrosPares++;
+                }
+            }
+
+            return Math.round((paginas / cantLibrosPares) * 100.0) / 100.0;
+        } catch(NullPointerException e) {
+            System.out.println("No existen libros para hacer el calculo: " + e);
+            return null;
+        }
+    }
+
     @Override
     public String toString() {
         return String.format("* Cantidad libros: %d\n" +
